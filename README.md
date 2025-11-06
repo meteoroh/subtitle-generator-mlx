@@ -54,13 +54,13 @@ This project provides a Python script to automatically generate subtitles for au
         # generator.transcribe('/path/to/your/audio.mp3', source_language='ja', log=True)
 
         # 2. Generate translated subtitles for a single file
-        # generator.generate('/path/to/your/audio.mp3', translation=True, source_language='ja', target_language='ko', log=True)
+        # generator.generate('/path/to/your/audio.mp3', translation=True, source_language='ja', target_language='en', log=True)
 
         # 3. Generate subtitles in the original language for a single file
         # generator.generate('/path/to/your/audio.mp3', source_language='ja')
 
         # 4. Generate translated subtitles for all mp4 files in a directory
-        # generator.generate_all('/path/to/your/*.mp4', translation=True, source_language='ja', target_language='ko')
+        # generator.generate_all('/path/to/your/*.mp4', translation=True, source_language='ja', target_language='en')
     ```
 
 3.  **Run the script:**

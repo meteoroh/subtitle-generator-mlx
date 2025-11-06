@@ -139,7 +139,6 @@ class SubtitleGenerator:
 
 if __name__ == '__main__':
     generator = SubtitleGenerator('whisper-large-v3-mlx', 'google/gemma-3-12b')
-    # generator = SubtitleGenerator('whisper-large-v3-turbo', 'aya-expanse-8b')
 
     generator.transcribe('/path/to/your/audio.mp3', source_language='ja', log=True)
     # generator.generate('/path/to/your/video.mp4', translation=True, source_language='ja', target_language='en', log=True)
