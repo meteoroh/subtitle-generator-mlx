@@ -21,6 +21,14 @@ class SubtitleGenerator:
     def __init__(self, whisper_model, translator_model=None):
         self.whisper_model = whisper_model
         self.translator_model = translator_model
+        self.settings = self._load_settings()
+
+    def _load_settings(self):
+        settings_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'settings.json')
+        if os.path.exists(settings_path):
+            with open(settings_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        return {}
 
     def transcribe(self, path, source_language=None, log=True):
         if not os.path.exists(path):
@@ -29,8 +37,14 @@ class SubtitleGenerator:
         filename = os.path.basename(path)
         start_time = time.perf_counter()
 
-        output = mlx_whisper.transcribe(path, path_or_hf_repo=f'mlx-community/{self.whisper_model}', language=source_language,
-                                        temperature=0.0, logprob_threshold=-0.04, no_speech_threshold=0.3, condition_on_previous_text=False, word_timestamps=True, hallucination_silence_threshold=1, verbose=log)
+        transcription_options = self.settings.get('transcription_options', {})
+        output = mlx_whisper.transcribe(
+            path,
+            path_or_hf_repo=f'mlx-community/{self.whisper_model}',
+            language=source_language,
+            verbose=log,
+            **transcription_options
+        )
 
         end_time = time.perf_counter()
         print(f'Transcribed {filename} in {end_time - start_time:.1f}s')

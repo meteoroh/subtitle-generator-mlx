@@ -1,5 +1,5 @@
 [project]
-name = "subtitle-generator"
+name = "subtitle-generator-mlx"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"

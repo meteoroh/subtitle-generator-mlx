@@ -1,0 +1,10 @@
+{
+    "transcription_options": {
+        "temperature": 0.0,
+        "logprob_threshold": -0.8,
+        "no_speech_threshold": 0.5,
+        "condition_on_previous_text": false,
+        "word_timestamps": true,
+        "hallucination_silence_threshold": 1
+    }
+}
