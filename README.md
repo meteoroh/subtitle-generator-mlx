@@ -21,8 +21,8 @@ This project provides a Python script to automatically generate subtitles for au
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yusung/subtitle_generator
-    cd subtitle_generator
+    git clone https://github.com/meteoroh/subtitle-generator-mlx
+    cd subtitle-generator-mlx
     ```
 
 2.  **Install uv:**
