@@ -71,6 +71,27 @@ This project provides a Python script to automatically generate subtitles for au
 
     The generated subtitle files will be saved in the `results` directory.
 
+## Configuration
+
+You can configure the transcription options by creating a `settings.json` file in the root of the project directory. The script will automatically load the settings from this file.
+
+This is optional. If the file does not exist, the script will use the default settings.
+
+Here is an example of a `settings.json` file:
+
+```json
+{
+    "transcription_options": {
+        "temperature": 0.0,
+        "logprob_threshold": -0.8,
+        "no_speech_threshold": 0.5,
+        "condition_on_previous_text": false,
+        "word_timestamps": true,
+        "hallucination_silence_threshold": 1
+    }
+}
+```
+
 ### Parameters
 
 Here are the parameters for the methods in the `SubtitleGenerator` class:
