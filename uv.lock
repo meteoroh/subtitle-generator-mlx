@@ -799,7 +799,7 @@ wheels = [
 ]
 
 [[package]]
-name = "subtitle-generator"
+name = "subtitle-generator-mlx"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
